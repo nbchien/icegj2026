@@ -241,109 +241,239 @@
             </div>
         </section>
 
-        <section class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12">
-            <div class="flex items-center gap-3 mb-6">
-                <div class="w-2 h-8 bg-brand-teal rounded-full"></div>
-                <h3 class="text-2xl font-heading font-bold text-brand-blue uppercase">II. Exhibition Features</h3>
-            </div>
+        <section class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12 space-y-12">
             
-            <p class="text-gray-600 mb-8 leading-relaxed">
-                The exhibition is organized into four functional zones, bringing together academia, industry leaders, and innovators to facilitate knowledge exchange and promote sustainability pathways.
-            </p>
+            <style>
+                .flip-card { perspective: 1000px; }
+                .flip-card-inner {
+                    position: relative; width: 100%; height: 100%;
+                    text-align: center; transition: transform 0.6s;
+                    transform-style: preserve-3d;
+                }
+                .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+                .flip-card-front, .flip-card-back {
+                    position: absolute; width: 100%; height: 100%;
+                    -webkit-backface-visibility: hidden; backface-visibility: hidden;
+                    border-radius: 0.75rem;
+                }
+                .flip-card-back { transform: rotateY(180deg); }
+            </style>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div>
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-2 h-8 bg-brand-teal rounded-full"></div>
+                    <h3 class="text-2xl font-heading font-bold text-brand-blue uppercase">II. Exhibition Features</h3>
+                </div>
                 
-                <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    
-                    <div class="bg-slate-50 border border-slate-200 p-6 rounded-xl hover:border-brand-teal hover:shadow-md transition duration-300 flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="text-brand-teal font-bold text-xs uppercase tracking-widest">Zone 01</span>
-                                <div class="text-brand-blue bg-white p-2 rounded-lg shadow-sm"><i class="fas fa-graduation-cap text-lg"></i></div>
+                <p class="text-gray-600 mb-8 leading-relaxed">
+                    The exhibition is organized into four functional zones, bringing together academia, industry leaders, and innovators to facilitate knowledge exchange and promote sustainability pathways.
+                </p>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="bg-slate-50 border border-slate-200 p-6 rounded-xl hover:border-brand-teal hover:shadow-md transition duration-300 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="text-brand-teal font-bold text-xs uppercase tracking-widest">Zone 01</span>
+                                    <div class="text-brand-blue bg-white p-2 rounded-lg shadow-sm"><i class="fas fa-graduation-cap text-lg"></i></div>
+                                </div>
+                                <h4 class="font-heading font-bold text-lg text-brand-blue mb-3">Education Hub</h4>
+                                <ul class="space-y-2.5 text-sm text-gray-600">
+                                    <li class="flex items-start gap-2"><i class="fas fa-check text-brand-teal text-xs mt-1"></i> <span>Micro-credentials and modular learning</span></li>
+                                    <li class="flex items-start gap-2"><i class="fas fa-check text-brand-teal text-xs mt-1"></i> <span>Train-the-Trainer (ToT) and replication models</span></li>
+                                    <li class="flex items-start gap-2"><i class="fas fa-check text-brand-teal text-xs mt-1"></i> <span>ASEAN TVET-HE alignment initiatives</span></li>
+                                </ul>
                             </div>
-                            <h4 class="font-heading font-bold text-lg text-brand-blue mb-3">Education Hub</h4>
-                            <ul class="space-y-2.5 text-sm text-gray-600">
-                                <li class="flex items-start gap-2"><i class="fas fa-check text-brand-teal text-xs mt-1"></i> <span>Micro-credentials and modular learning</span></li>
-                                <li class="flex items-start gap-2"><i class="fas fa-check text-brand-teal text-xs mt-1"></i> <span>Train-the-Trainer (ToT) and replication models</span></li>
-                                <li class="flex items-start gap-2"><i class="fas fa-check text-brand-teal text-xs mt-1"></i> <span>ASEAN TVET-HE alignment initiatives</span></li>
-                            </ul>
+                        </div>
+
+                        <div class="bg-slate-50 border border-slate-200 p-6 rounded-xl hover:border-brand-teal hover:shadow-md transition duration-300 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="text-brand-teal font-bold text-xs uppercase tracking-widest">Zone 02</span>
+                                    <div class="text-brand-blue bg-white p-2 rounded-lg shadow-sm"><i class="fas fa-industry text-lg"></i></div>
+                                </div>
+                                <h4 class="font-heading font-bold text-lg text-brand-blue mb-3">Industry Showcase</h4>
+                                <ul class="space-y-2.5 text-sm text-gray-600">
+                                    <li class="flex items-start gap-2"><i class="fas fa-check text-brand-teal text-xs mt-1"></i> <span>Green industry tools and platforms</span></li>
+                                    <li class="flex items-start gap-2"><i class="fas fa-check text-brand-teal text-xs mt-1"></i> <span>Green technologies and ESG solutions</span></li>
+                                    <li class="flex items-start gap-2"><i class="fas fa-check text-brand-teal text-xs mt-1"></i> <span>Internship and employment pathways</span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-50 border border-slate-200 p-6 rounded-xl hover:border-brand-teal hover:shadow-md transition duration-300 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="text-brand-teal font-bold text-xs uppercase tracking-widest">Zone 03</span>
+                                    <div class="text-brand-blue bg-white p-2 rounded-lg shadow-sm"><i class="fas fa-lightbulb text-lg"></i></div>
+                                </div>
+                                <h4 class="font-heading font-bold text-lg text-brand-blue mb-3">Youth Talent Arena</h4>
+                                <ul class="space-y-2.5 text-sm text-gray-600">
+                                    <li class="flex items-start gap-2"><i class="fas fa-check text-brand-teal text-xs mt-1"></i> <span>Student projects and demonstrations</span></li>
+                                    <li class="flex items-start gap-2"><i class="fas fa-check text-brand-teal text-xs mt-1"></i> <span>Hackathons, innovation challenges</span></li>
+                                    <li class="flex items-start gap-2"><i class="fas fa-check text-brand-teal text-xs mt-1"></i> <span>Social innovation and startup pitches</span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-50 border border-slate-200 p-6 rounded-xl hover:border-brand-teal hover:shadow-md transition duration-300 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="text-brand-teal font-bold text-xs uppercase tracking-widest">Zone 04</span>
+                                    <div class="text-brand-blue bg-white p-2 rounded-lg shadow-sm"><i class="fas fa-university text-lg"></i></div>
+                                </div>
+                                <h4 class="font-heading font-bold text-lg text-brand-blue mb-3">Institutional Solutions Zone</h4>
+                                <ul class="space-y-2.5 text-sm text-gray-600">
+                                    <li class="flex items-start gap-2"><i class="fas fa-check text-brand-teal text-xs mt-1"></i> <span>Tools for curriculum integration</span></li>
+                                    <li class="flex items-start gap-2"><i class="fas fa-check text-brand-teal text-xs mt-1"></i> <span>Institutional reform and scaling models</span></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="bg-slate-50 border border-slate-200 p-6 rounded-xl hover:border-brand-teal hover:shadow-md transition duration-300 flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="text-brand-teal font-bold text-xs uppercase tracking-widest">Zone 02</span>
-                                <div class="text-brand-blue bg-white p-2 rounded-lg shadow-sm"><i class="fas fa-industry text-lg"></i></div>
+                    <div class="bg-brand-blue text-white p-8 rounded-2xl shadow-lg flex flex-col justify-between relative overflow-hidden border-l-4 border-brand-teal min-h-[350px]">
+                        <div class="absolute -right-10 -bottom-10 opacity-5">
+                            <i class="fas fa-eye text-9xl"></i>
+                        </div>
+                        <div class="relative z-10 space-y-6">
+                            <h4 class="font-heading font-bold text-xl text-brand-teal uppercase tracking-wide border-b border-white/10 pb-2">Exhibition Highlights</h4>
+                            <div class="flex items-start gap-3">
+                                <div class="mt-1 bg-white/10 p-2 rounded-lg text-brand-teal flex-shrink-0"><i class="fas fa-globe"></i></div>
+                                <p class="text-sm leading-relaxed"><strong class="text-white text-base block">10+ Exhibitors</strong> From ASEAN and EU regions, spanning across 7 core sectors.</p>
                             </div>
-                            <h4 class="font-heading font-bold text-lg text-brand-blue mb-3">Industry Showcase</h4>
-                            <ul class="space-y-2.5 text-sm text-gray-600">
-                                <li class="flex items-start gap-2"><i class="fas fa-check text-brand-teal text-xs mt-1"></i> <span>Green industry tools and platforms</span></li>
-                                <li class="flex items-start gap-2"><i class="fas fa-check text-brand-teal text-xs mt-1"></i> <span>Green technologies and ESG solutions</span></li>
-                                <li class="flex items-start gap-2"><i class="fas fa-check text-brand-teal text-xs mt-1"></i> <span>Internship and employment pathways</span></li>
-                            </ul>
+                            <div class="flex items-start gap-3">
+                                <div class="mt-1 bg-white/10 p-2 rounded-lg text-brand-teal flex-shrink-0"><i class="fas fa-clock"></i></div>
+                                <p class="text-sm text-gray-300 leading-relaxed">These clinics are scheduled alongside conference sessions and embedded within the exhibition space to maximize participation.</p>
+                            </div>
+                        </div>
+                        <div class="relative z-10 pt-6">
+                            <a href="registration/index.html" class="w-full inline-flex items-center justify-center gap-2 bg-brand-teal text-brand-dark font-bold py-3 px-6 rounded-xl hover:bg-teal-300 shadow-md transition transform hover:-translate-y-0.5 duration-200">
+                                <i class="fas fa-id-badge"></i> Register for Exhibition
+                            </a>
                         </div>
                     </div>
-
-                    <div class="bg-slate-50 border border-slate-200 p-6 rounded-xl hover:border-brand-teal hover:shadow-md transition duration-300 flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="text-brand-teal font-bold text-xs uppercase tracking-widest">Zone 03</span>
-                                <div class="text-brand-blue bg-white p-2 rounded-lg shadow-sm"><i class="fas fa-lightbulb text-lg"></i></div>
-                            </div>
-                            <h4 class="font-heading font-bold text-lg text-brand-blue mb-3">Youth Talent Arena</h4>
-                            <ul class="space-y-2.5 text-sm text-gray-600">
-                                <li class="flex items-start gap-2"><i class="fas fa-check text-brand-teal text-xs mt-1"></i> <span>Student projects and demonstrations</span></li>
-                                <li class="flex items-start gap-2"><i class="fas fa-check text-brand-teal text-xs mt-1"></i> <span>Hackathons, innovation challenges</span></li>
-                                <li class="flex items-start gap-2"><i class="fas fa-check text-brand-teal text-xs mt-1"></i> <span>Social innovation and startup pitches</span></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="bg-slate-50 border border-slate-200 p-6 rounded-xl hover:border-brand-teal hover:shadow-md transition duration-300 flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="text-brand-teal font-bold text-xs uppercase tracking-widest">Zone 04</span>
-                                <div class="text-brand-blue bg-white p-2 rounded-lg shadow-sm"><i class="fas fa-university text-lg"></i></div>
-                            </div>
-                            <h4 class="font-heading font-bold text-lg text-brand-blue mb-3">Institutional Solutions Zone</h4>
-                            <ul class="space-y-2.5 text-sm text-gray-600">
-                                <li class="flex items-start gap-2"><i class="fas fa-check text-brand-teal text-xs mt-1"></i> <span>Tools for curriculum integration</span></li>
-                                <li class="flex items-start gap-2"><i class="fas fa-check text-brand-teal text-xs mt-1"></i> <span>Institutional reform and scaling models</span></li>
-                            </ul>
-                        </div>
-                    </div>
-
                 </div>
-
-                <div class="bg-brand-blue text-white p-8 rounded-2xl shadow-lg flex flex-col justify-between relative overflow-hidden border-l-4 border-brand-teal min-h-[350px]">
-                    <div class="absolute -right-10 -bottom-10 opacity-5">
-                        <i class="fas fa-eye text-9xl"></i>
-                    </div>
-                    
-                    <div class="relative z-10 space-y-6">
-                        <h4 class="font-heading font-bold text-xl text-brand-teal uppercase tracking-wide border-b border-white/10 pb-2">Exhibition Highlights</h4>
-                        
-                        <div class="flex items-start gap-3">
-                            <div class="mt-1 bg-white/10 p-2 rounded-lg text-brand-teal flex-shrink-0"><i class="fas fa-globe"></i></div>
-                            <p class="text-sm leading-relaxed"><strong class="text-white text-base block">10+ Exhibitors</strong> From ASEAN and EU regions, spanning across 7 core sectors.</p>
-                        </div>
-
-                        <div class="flex items-start gap-3">
-                            <div class="mt-1 bg-white/10 p-2 rounded-lg text-brand-teal flex-shrink-0"><i class="fas fa-clock"></i></div>
-                            <p class="text-sm text-gray-300 leading-relaxed">These clinics are scheduled alongside conference sessions and embedded within the exhibition space to maximize participation.</p>
-                        </div>
-                    </div>
-
-                    <div class="relative z-10 pt-6">
-                        <a href="registration/index.html" class="w-full inline-flex items-center justify-center gap-2 bg-brand-teal text-brand-dark font-bold py-3 px-6 rounded-xl hover:bg-teal-300 shadow-md transition transform hover:-translate-y-0.5 duration-200">
-                            <i class="fas fa-id-badge"></i>
-                            Register for Exhibition
-                        </a>
-                    </div>
-                </div>
-
             </div>
+
+            <hr class="border-gray-200">
+
+            <div>
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-2 h-8 bg-brand-blue rounded-full"></div>
+                    <h4 class="text-xl font-heading font-bold text-brand-blue uppercase tracking-wide">Exhibition Organizing Committee</h4>
+                </div>
+                <p class="text-gray-600 text-sm mb-8">Hover/Tap on the cards to see the affiliation details of our committee members.</p>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                    
+                    <div class="flip-card h-64 w-full">
+                        <div class="flip-card-inner shadow-sm border border-slate-200 rounded-xl">
+                            <div class="flip-card-front bg-slate-50 p-4 flex flex-col items-center justify-center gap-3">
+                                <div class="w-24 h-24 rounded-full bg-slate-200 flex items-center justify-center text-slate-400 border-2 border-brand-teal/50 overflow-hidden">
+                                    <i class="fas fa-user text-4xl"></i>
+                                </div>
+                                <h5 class="font-bold text-gray-900 text-sm leading-tight">Assoc. Prof. Dr.<br>Hoang An Quoc</h5>
+                            </div>
+                            <div class="flip-card-back bg-brand-blue text-white p-4 flex flex-col items-center justify-center">
+                                <i class="fas fa-university text-brand-teal text-xl mb-2"></i>
+                                <p class="text-xs text-center text-slate-200 px-2 leading-relaxed">HCM City University of Technology and Education, Vietnam</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card h-64 w-full">
+                        <div class="flip-card-inner shadow-sm border border-slate-200 rounded-xl">
+                            <div class="flip-card-front bg-slate-50 p-4 flex flex-col items-center justify-center gap-3">
+                                <div class="w-24 h-24 rounded-full bg-slate-200 flex items-center justify-center text-slate-400 border-2 border-brand-teal/50 overflow-hidden">
+                                    <i class="fas fa-user text-4xl"></i>
+                                </div>
+                                <h5 class="font-bold text-gray-900 text-sm leading-tight">Assoc. Prof. Dr.<br>Nguyen Thi Van Ha</h5>
+                            </div>
+                            <div class="flip-card-back bg-brand-blue text-white p-4 flex flex-col items-center justify-center">
+                                <i class="fas fa-university text-brand-teal text-xl mb-2"></i>
+                                <p class="text-xs text-center text-slate-200 px-2 leading-relaxed">University of Transport and Communications</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card h-64 w-full">
+                        <div class="flip-card-inner shadow-sm border border-slate-200 rounded-xl">
+                            <div class="flip-card-front bg-slate-50 p-4 flex flex-col items-center justify-center gap-3">
+                                <div class="w-24 h-24 rounded-full bg-slate-200 flex items-center justify-center text-slate-400 border-2 border-brand-teal/50 overflow-hidden">
+                                    <i class="fas fa-user text-4xl"></i>
+                                </div>
+                                <h5 class="font-bold text-gray-900 text-sm leading-tight">Dr.<br>Pham Thi Huong Diu</h5>
+                            </div>
+                            <div class="flip-card-back bg-brand-blue text-white p-4 flex flex-col items-center justify-center">
+                                <i class="fas fa-university text-brand-teal text-xl mb-2"></i>
+                                <p class="text-xs text-center text-slate-200 px-2 leading-relaxed">Vietnam National University of Agriculture</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card h-64 w-full">
+                        <div class="flip-card-inner shadow-sm border border-slate-200 rounded-xl">
+                            <div class="flip-card-front bg-slate-50 p-4 flex flex-col items-center justify-center gap-3">
+                                <div class="w-24 h-24 rounded-full bg-slate-200 flex items-center justify-center text-slate-400 border-2 border-brand-teal/50 overflow-hidden">
+                                    <i class="fas fa-user text-4xl"></i>
+                                </div>
+                                <h5 class="font-bold text-gray-900 text-sm leading-tight">Dr.<br>Nor Azidawati Haron</h5>
+                            </div>
+                            <div class="flip-card-back bg-brand-blue text-white p-4 flex flex-col items-center justify-center">
+                                <i class="fas fa-university text-brand-teal text-xl mb-2"></i>
+                                <p class="text-xs text-center text-slate-200 px-2 leading-relaxed">Universiti Teknologi Malaysia<br>(UTM)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card h-64 w-full">
+                        <div class="flip-card-inner shadow-sm border border-slate-200 rounded-xl">
+                            <div class="flip-card-front bg-slate-50 p-4 flex flex-col items-center justify-center gap-3">
+                                <div class="w-24 h-24 rounded-full bg-slate-200 flex items-center justify-center text-slate-400 border-2 border-brand-teal/50 overflow-hidden">
+                                    <i class="fas fa-user text-4xl"></i>
+                                </div>
+                                <h5 class="font-bold text-gray-900 text-sm leading-tight">Dr.<br>Fadzlin Md Sairan</h5>
+                            </div>
+                            <div class="flip-card-back bg-brand-blue text-white p-4 flex flex-col items-center justify-center">
+                                <i class="fas fa-university text-brand-teal text-xl mb-2"></i>
+                                <p class="text-xs text-center text-slate-200 px-2 leading-relaxed">Universiti Teknologi Malaysia<br>(UTM)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card h-64 w-full">
+                        <div class="flip-card-inner shadow-sm border border-slate-200 rounded-xl">
+                            <div class="flip-card-front bg-slate-50 p-4 flex flex-col items-center justify-center gap-3">
+                                <div class="w-24 h-24 rounded-full bg-slate-200 flex items-center justify-center text-slate-400 border-2 border-brand-teal/50 overflow-hidden">
+                                    <i class="fas fa-user text-4xl"></i>
+                                </div>
+                                <h5 class="font-bold text-gray-900 text-sm leading-tight">Dr.<br>Nor Alafiza Yunus</h5>
+                            </div>
+                            <div class="flip-card-back bg-brand-blue text-white p-4 flex flex-col items-center justify-center">
+                                <i class="fas fa-university text-brand-teal text-xl mb-2"></i>
+                                <p class="text-xs text-center text-slate-200 px-2 leading-relaxed">Universiti Teknologi Malaysia<br>(UTM)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card h-64 w-full">
+                        <div class="flip-card-inner shadow-sm border border-slate-200 rounded-xl">
+                            <div class="flip-card-front bg-slate-50 p-4 flex flex-col items-center justify-center gap-3">
+                                <div class="w-24 h-24 rounded-full bg-slate-200 flex items-center justify-center text-slate-400 border-2 border-brand-teal/50 overflow-hidden">
+                                    <i class="fas fa-user text-4xl"></i>
+                                </div>
+                                <h5 class="font-bold text-gray-900 text-sm leading-tight">Dr.<br>Trinh Quoc Dung</h5>
+                            </div>
+                            <div class="flip-card-back bg-brand-blue text-white p-4 flex flex-col items-center justify-center">
+                                <i class="fas fa-university text-brand-teal text-xl mb-2"></i>
+                                <p class="text-xs text-center text-slate-200 px-2 leading-relaxed">Hanoi University of Science and Technology, Vietnam</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </section>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
