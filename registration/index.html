@@ -9,6 +9,8 @@
     <meta name="KeyWords" content="Conference, Registration, Payment, ICEGJ2026">
     <title>ICEGJ 2026 | Registration</title>
 
+    <base href="..">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -61,16 +63,11 @@
 
         <div id="main-menu" class="hidden absolute top-20 left-0 w-full bg-brand-blue shadow-xl border-t border-brand-teal/30 md:border-none md:shadow-none md:bg-transparent md:static md:w-auto md:flex md:items-center z-40">
             <div class="flex flex-col md:flex-row px-6 py-4 md:p-0 space-y-2 md:space-y-0 md:space-x-1 max-w-7xl mx-auto md:px-8 w-full justify-end">
-                
-                <a href="../index.html" class="text-white hover:bg-white/10 hover:text-brand-teal px-4 py-2 rounded-md text-base md:text-sm font-medium transition duration-200 block text-center md:inline-block">Home</a>
-                
-                <a href="../important-information/index.html" class="text-white hover:bg-white/10 hover:text-brand-teal px-4 py-2 rounded-md text-base md:text-sm font-medium transition duration-200 block text-center md:inline-block">Important Dates</a>
-                
-                <a href="../submissions/index.html" class="text-white hover:bg-white/10 hover:text-brand-teal px-4 py-2 rounded-md text-base md:text-sm font-medium transition duration-200 block text-center md:inline-block">Submission</a>
-                
-                <a href="../registration/index.html" class="bg-brand-teal text-brand-dark px-4 py-2 rounded-md text-base md:text-sm font-bold shadow-md block text-center md:inline-block">Registration</a>
-                
-                <a href="../program/index.html" class="text-white hover:bg-white/10 hover:text-brand-teal px-4 py-2 rounded-md text-base md:text-sm font-medium transition duration-200 block text-center md:inline-block">Program</a>
+                <a href="index.html" class="text-white hover:bg-white/10 hover:text-brand-teal px-4 py-2 rounded-md text-base md:text-sm font-medium transition duration-200 block text-center md:inline-block">Home</a>
+                <a href="important-information/index.html" class="text-white hover:bg-white/10 hover:text-brand-teal px-4 py-2 rounded-md text-base md:text-sm font-medium transition duration-200 block text-center md:inline-block">Important Dates</a>
+                <a href="submissions/index.html" class="text-white hover:bg-white/10 hover:text-brand-teal px-4 py-2 rounded-md text-base md:text-sm font-medium transition duration-200 block text-center md:inline-block">Submission</a>
+                <a href="registration/index.html" class="bg-brand-teal text-brand-dark px-4 py-2 rounded-md text-base md:text-sm font-bold shadow-md block text-center md:inline-block">Registration</a>
+                <a href="program/index.html" class="text-white hover:bg-white/10 hover:text-brand-teal px-4 py-2 rounded-md text-base md:text-sm font-medium transition duration-200 block text-center md:inline-block">Program</a>
             </div>
         </div>
     </nav>
@@ -83,33 +80,86 @@
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl font-heading mb-4">
-                Registration & Payment
+                Registration & Exhibition Fees
             </h1>
             <p class="text-lg text-brand-teal font-medium max-w-3xl mx-auto">
-                The 1st International Conference and Exhibition of Green Jobs
+                The 1st International Conference and Exhibition on Green Jobs for a Net-Zero Future
             </p>
-            <div class="mt-4 flex justify-center items-center gap-2 text-sm text-gray-300">
-                <i class="far fa-calendar-alt text-brand-teal"></i>
-                <span>October 26-29, 2026</span>
-                <span class="mx-2 text-gray-500">|</span>
-                <i class="fas fa-map-marker-alt text-brand-teal"></i>
-                <span>HUST, Hanoi, Vietnam</span>
-            </div>
         </div>
     </header>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
 
-        <section class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
+        <section class="space-y-6">
             <div class="flex items-center gap-3 mb-6">
                 <div class="w-2 h-8 bg-brand-teal rounded-full"></div>
-                <h3 class="text-2xl font-heading font-bold text-brand-blue uppercase">I. Registration Fees</h3>
+                <h3 class="text-2xl font-heading font-bold text-brand-blue uppercase">I. Conference & Exhibition Fees</h3>
             </div>
-            
-            <p class="text-gray-600 mb-6">The registration fee is listed as following:</p>
-            
-            <div class="bg-gray-50 rounded-xl p-4 flex justify-center border border-gray-200">
-                <img src="assets/fee2.png" alt="Registration Fee Table" class="w-full max-w-4xl object-contain rounded shadow-sm">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col justify-between hover:shadow-md transition">
+                    <div class="bg-brand-blue text-white p-6 text-center">
+                        <i class="fas fa-globe-americas text-3xl text-brand-teal mb-2"></i>
+                        <h4 class="font-heading font-bold text-xl uppercase tracking-wide">International Participants</h4>
+                    </div>
+                    <div class="p-6 space-y-6 flex-1 bg-slate-50/50">
+                        <div class="flex justify-between items-center border-b border-slate-200 pb-4">
+                            <div>
+                                <span class="font-semibold text-gray-900 text-base block">Lecturers / Researchers</span>
+                                <span class="text-xs text-gray-500">Standard conference access</span>
+                            </div>
+                            <span class="text-2xl font-bold text-brand-blue font-mono">USD 100</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-2">
+                            <div>
+                                <span class="font-semibold text-gray-900 text-base block">Students</span>
+                                <span class="text-xs text-gray-500">Undergraduate / Master's / PhD Candidates</span>
+                            </div>
+                            <span class="text-2xl font-bold text-brand-blue font-mono">USD 50</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col justify-between hover:shadow-md transition">
+                    <div class="bg-brand-blue text-white p-6 text-center">
+                        <i class="fas fa-flag text-3xl text-brand-teal mb-2"></i>
+                        <h4 class="font-heading font-bold text-xl uppercase tracking-wide">Domestic Participants</h4>
+                    </div>
+                    <div class="p-6 space-y-6 flex-1 bg-slate-50/50">
+                        <div class="flex justify-between items-center border-b border-slate-200 pb-4">
+                            <div>
+                                <span class="font-semibold text-gray-900 text-base block">Giảng viên / Nhà khoa học</span>
+                                <span class="text-xs text-gray-500">Lecturers & Researchers</span>
+                            </div>
+                            <span class="text-xl font-bold text-brand-blue font-mono">1,500,000 VND</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-2">
+                            <div>
+                                <span class="font-semibold text-gray-900 text-base block">Sinh viên / Học viên CH / NCS</span>
+                                <span class="text-xs text-gray-500">Undergraduate & Postgraduate Students</span>
+                            </div>
+                            <span class="text-xl font-bold text-brand-blue font-mono">750,000 VND</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border-l-4 border-brand-teal p-6 flex flex-col sm:flex-row justify-between items-center gap-4 hover:shadow-md transition">
+                <div class="flex items-center gap-4">
+                    <div class="bg-brand-teal/10 p-3 rounded-xl text-brand-blue hidden sm:block">
+                        <i class="fas fa-store text-2xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-heading font-bold text-lg text-brand-blue uppercase tracking-wide">Exhibition Booth Fee</h4>
+                        <p class="text-sm text-gray-600">Standard exhibitor package size: <strong class="text-gray-900">6 – 10 m²</strong></p>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <span class="text-xl sm:text-2xl font-bold text-brand-blue font-mono block">6,000,000 – 10,000,000 VND</span>
+                    <span class="text-xs text-gray-400 italic">Per booth location</span>
+                </div>
             </div>
         </section>
 
@@ -121,14 +171,13 @@
 
             <div class="bg-brand-teal/10 border-l-4 border-brand-teal rounded-r-xl p-6 mb-8">
                 <h4 class="font-bold text-brand-blue text-lg mb-2 flex items-center gap-2">
-                    <i class="fas fa-credit-card"></i> 2.2 Payment by Card (Onsite)
+                    <i class="fas fa-credit-card"></i> 2.1 Payment by Card (Onsite)
                 </h4>
                 <p class="text-gray-700 text-sm leading-relaxed mb-2">
-                    ICEGJ 2026 only supports <strong>"PAYMENT BY CARD ONSITE"</strong> via POS.<br>
-                    In case participants must use a card, please email to <a href="mailto:emailhere" class="text-brand-blue font-semibold hover:underline">updating ...</a> and declare it in the Registration Form.
+                    The conference supports <strong>"PAYMENT BY CARD ONSITE"</strong> via POS terminal.
                 </p>
                 <p class="text-gray-700 text-sm leading-relaxed">
-                    The Committee will note your registration, and participants can pay onsite later. Thank you.
+                    If you prefer to pay via card, please state it clearly in the online Registration Form. The committee will process your request and confirm your onsite payment arrangement.
                 </p>
             </div>
 
@@ -136,7 +185,7 @@
                 
                 <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 hover:shadow-md transition">
                     <h4 class="font-bold text-brand-blue text-lg mb-4 pb-2 border-b border-slate-200 flex items-center gap-2">
-                        <i class="fas fa-globe-americas text-brand-teal"></i> 2.1 Oversea Payment (US Dollar)
+                        <i class="fas fa-globe-americas text-brand-teal"></i> 2.2 Oversea Payment (US Dollar)
                     </h4>
                     <ul class="space-y-3 text-sm text-gray-700">
                         <li class="flex flex-col"><span class="text-gray-500 text-xs uppercase tracking-wide">Beneficiary Account Name</span> <strong class="text-gray-900 text-base">Updating...</strong></li>
@@ -148,9 +197,9 @@
                     </ul>
                     
                     <div class="mt-5 bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
-                        <span class="block text-yellow-800 text-xs font-bold uppercase mb-1">Transfer / Payment Note:</span>
+                        <span class="block text-yellow-800 text-xs font-bold uppercase mb-1">Transfer Note / Syntax:</span>
                         <code class="text-yellow-900 text-sm font-semibold">ICEGJ 2026, Paper No:...., Presenter name:....., Payment category:.......</code>
-                        <p class="text-xs text-yellow-700 mt-1 italic">(Example category: Regular registration)</p>
+                        <p class="text-xs text-yellow-700 mt-1 italic">(Example: Regular registration)</p>
                     </div>
                 </div>
 
@@ -159,12 +208,12 @@
                         <i class="fas fa-money-bill-wave text-brand-teal"></i> 2.3 Tài Khoản Việt Nam Đồng
                     </h4>
                     <ul class="space-y-3 text-sm text-gray-700">
-                        <li class="flex flex-col"><span class="text-gray-500 text-xs uppercase tracking-wide">Tên tài khoản</span> <strong class="text-gray-900 text-base"> Đang cập nhật ...</strong></li>
-                        <li class="flex flex-col"><span class="text-gray-500 text-xs uppercase tracking-wide">Số tài khoản</span> <strong class="text-brand-blue text-lg font-mono tracking-wider">Đang cập nhật ...</strong></li>
-                        <li class="flex flex-col"><span class="text-gray-500 text-xs uppercase tracking-wide">Tên ngân hàng</span> <span class="font-medium text-gray-900">Đang cập nhật ...</span></li>
-                        <li class="flex flex-col"><span class="text-gray-500 text-xs uppercase tracking-wide">Swift Code</span> <strong class="text-gray-900 font-mono tracking-wider">Đang cập nhật ...</strong></li>
-                        <li class="flex flex-col"><span class="text-gray-500 text-xs uppercase tracking-wide">Địa chỉ đơn vị thụ hưởng</span> <span class="text-gray-800">Đang cập nhật ...</span></li>
-                        <li class="flex flex-col"><span class="text-gray-500 text-xs uppercase tracking-wide">Địa chỉ ngân hàng</span> <span class="text-gray-800">Đang cập nhật ...</span></li>
+                        <li class="flex flex-col"><span class="text-gray-500 text-xs uppercase tracking-wide">Tên tài khoản</span> <strong class="text-gray-900 text-base">Updating...</strong></li>
+                        <li class="flex flex-col"><span class="text-gray-500 text-xs uppercase tracking-wide">Số tài khoản</span> <strong class="text-brand-blue text-lg font-mono tracking-wider">Updating...</strong></li>
+                        <li class="flex flex-col"><span class="text-gray-500 text-xs uppercase tracking-wide">Tên ngân hàng</span> <span class="font-medium text-gray-900">Updating...</span></li>
+                        <li class="flex flex-col"><span class="text-gray-500 text-xs uppercase tracking-wide">Swift Code</span> <strong class="text-gray-900 font-mono tracking-wider">Updating...</strong></li>
+                        <li class="flex flex-col"><span class="text-gray-500 text-xs uppercase tracking-wide">Địa chỉ đơn vị thụ hưởng</span> <span class="text-gray-800">Updating...</span></li>
+                        <li class="flex flex-col"><span class="text-gray-500 text-xs uppercase tracking-wide">Địa chỉ ngân hàng</span> <span class="text-gray-800">Updating...</span></li>
                     </ul>
 
                     <div class="mt-5 bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
@@ -183,10 +232,10 @@
             <div class="relative z-10 max-w-2xl mx-auto">
                 <h3 class="text-3xl font-heading font-bold text-white mb-4">III. Registration Information Form</h3>
                 <p class="text-brand-light/90 mb-8 leading-relaxed">
-                    Thank you for your interest in attending the ICEGJ 2026 Conference. Please fill out the form below to confirm your participation. This information is crucial for the ICEGJ 2026 Committee to prepare facilities and events.
+                    Please complete the registration form linked below to officially confirm your attendance, paper presentations, or exhibition space bookings.
                 </p>
                 
-                <a href="https://........" target="_blank" class="inline-flex items-center justify-center gap-3 bg-brand-teal text-brand-dark font-bold text-lg px-8 py-4 rounded-full hover:bg-teal-300 shadow-xl transition transform hover:scale-105">
+                <a href="https://forms.gle/Updating..." target="_blank" class="inline-flex items-center justify-center gap-3 bg-brand-teal text-brand-dark font-bold text-lg px-8 py-4 rounded-full hover:bg-teal-300 shadow-xl transition transform hover:scale-105 duration-200">
                     <i class="fab fa-google text-xl"></i>
                     Open Registration Form
                 </a>
@@ -198,19 +247,20 @@
     <footer class="bg-brand-dark text-gray-400 py-10 mt-12 border-t-4 border-brand-teal">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center gap-3">
-                <i class="fas fa-id-card text-brand-teal text-2xl"></i>
+                <i class="fas fa-leaf text-brand-teal text-2xl"></i>
                 <span class="font-heading font-bold text-xl text-white">ICEGJ <span class="text-brand-teal">2026</span></span>
             </div>
             
             <div class="text-sm text-center md:text-right">
                 <p>&copy; Conference Organizers. All rights reserved.</p>
-                <p class="mt-1">Design by <a href="https://icegj.org" class="text-brand-teal hover:underline">ICEGJ 2026</a></p>
+                <p class="mt-1">Design inspired by <a href="https://icegj.org" class="text-brand-teal hover:underline">ICEGJ 2026</a></p>
             </div>
         </div>
     </footer>
+
     <script>
         const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('main-menu'); // Thầy đổi từ 'mobile-menu' thành 'main-menu'
+        const menu = document.getElementById('main-menu');
 
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
