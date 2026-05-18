@@ -42,9 +42,10 @@
 </head>
 <body class="bg-slate-100 text-gray-800 font-sans antialiased">
 
-    <nav class="bg-brand-blue text-white sticky top-0 z-50 shadow-lg">
+    <nav class="bg-brand-blue text-white sticky top-0 z-50 shadow-lg relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
+                
                 <div class="flex items-center gap-3">
                     <div class="bg-brand-teal text-white p-2 rounded-lg">
                         <i class="fas fa-leaf text-xl"></i>
@@ -52,21 +53,27 @@
                     <span class="font-heading font-bold text-2xl tracking-wider text-white">ICEGJ <span class="text-brand-teal">2026</span></span>
                 </div>
                 
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-1">
-                        <a href="index.html" class="hover:bg-white/10 hover:text-brand-teal px-4 py-2 rounded-md text-sm font-medium transition duration-200">Home</a>
-                        <a href="important-information/index.html" class="hover:bg-white/10 hover:text-brand-teal px-4 py-2 rounded-md text-sm font-medium transition duration-200">Important Dates</a>
-                        <a href="submissions/index.html" class="hover:bg-white/10 hover:text-brand-teal px-4 py-2 rounded-md text-sm font-medium transition duration-200">Submission</a>
-                        <a href="registration/index.html" class="hover:bg-white/10 hover:text-brand-teal px-4 py-2 rounded-md text-sm font-medium transition duration-200">Registration</a>
-                        <a href="program/index.html" class="hover:bg-white/10 hover:text-brand-teal px-4 py-2 rounded-md text-sm font-medium transition duration-200">Program</a>
-                    </div>
-                </div>
-
                 <div class="md:hidden flex items-center">
-                    <button class="text-white hover:text-brand-teal focus:outline-none">
+                    <button id="mobile-menu-btn" class="text-white hover:text-brand-teal focus:outline-none p-2">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
+
+                <div id="main-menu" class="hidden absolute top-20 left-0 w-full bg-brand-blue shadow-xl border-t border-brand-teal/30 md:border-none md:shadow-none md:bg-transparent md:static md:w-auto md:flex md:items-center z-40">
+                    <div class="flex flex-col md:flex-row px-4 py-4 md:p-0 space-y-2 md:space-y-0 md:space-x-1">
+                        
+                        <a href="index.html" class="bg-brand-teal text-brand-dark px-4 py-2 rounded-md text-base md:text-sm font-bold shadow-md block text-center md:inline-block">Home</a>
+                        
+                        <a href="important-information/index.html" class="text-white hover:bg-white/10 hover:text-brand-teal px-4 py-2 rounded-md text-base md:text-sm font-medium transition duration-200 block text-center md:inline-block">Important Dates</a>
+                        
+                        <a href="submissions/index.html" class="text-white hover:bg-white/10 hover:text-brand-teal px-4 py-2 rounded-md text-base md:text-sm font-medium transition duration-200 block text-center md:inline-block">Submission</a>
+                        
+                        <a href="registration/index.html" class="text-white hover:bg-white/10 hover:text-brand-teal px-4 py-2 rounded-md text-base md:text-sm font-medium transition duration-200 block text-center md:inline-block">Registration</a>
+                        
+                        <a href="program/index.html" class="text-white hover:bg-white/10 hover:text-brand-teal px-4 py-2 rounded-md text-base md:text-sm font-medium transition duration-200 block text-center md:inline-block">Program</a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </nav>
@@ -289,6 +296,13 @@
             </div>
         </div>
     </footer>
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
 
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
