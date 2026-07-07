@@ -38,6 +38,11 @@
         html { scroll-behavior: smooth; }
         /* Style cho các ảnh bị lỗi đường dẫn */
         img[alt] { font-size: 0.8rem; color: #64748b; text-align: center; }
+        
+        /* Hiệu ứng mượt mà khi mở rộng text */
+        #more-text {
+            transition: all 0.3s ease-in-out;
+        }
     </style>
 </head>
 <body class="bg-slate-100 text-gray-800 font-sans antialiased">
@@ -117,17 +122,34 @@
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
 
+        <!-- BẮT ĐẦU: KHU VỰC ĐÃ ĐƯỢC CẬP NHẬT READ MORE -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 hover:shadow-md transition">
                 <div class="flex items-center gap-3 mb-4">
                     <div class="w-2 h-8 bg-brand-teal rounded-full"></div>
                     <h3 class="text-2xl font-heading font-bold text-brand-blue uppercase">ICEGJ Introduction</h3>
                 </div>
-                <p class="text-gray-600 leading-relaxed text-justify">
-                    The 1st International Conference and Exhibition on Green Jobs for a Net-Zero Future (ICEGJ) is a key dissemination and networking activity of the TUNE Project under the Erasmus+ CBHE programme. The event supports the project’s mission to strengthen green skills education, improve graduate employability, and promote collaboration among universities, industry, policymakers, and international partners across ASEAN and Europe.
-                    <br>Amid global climate change, energy transition, digital transformation, and sustainable development commitments, demand for green jobs and future-ready skills is growing rapidly across sectors such as energy, transport, agriculture, buildings, forestry, waste management, artificial intelligence, and digital technologies. The conference provides an international platform for policy dialogue, academic exchange, industry engagement, and partnership development related to green jobs, sustainability transitions, and workforce transformation. The exhibition will showcase green technologies, educational initiatives, student innovations, startup ideas, and practical industry solutions that support sustainable development and green career pathways. Through demonstrations, networking sessions, innovation showcases, career-oriented activities, and partnership meetings, the event aims to strengthen education–industry linkages and create new opportunities for ASEAN–EU collaboration.
+                <div class="text-gray-600 leading-relaxed text-justify relative">
+                    <p>
+                        The 1st International Conference and Exhibition on Green Jobs for a Net-Zero Future (ICEGJ) is a key dissemination and networking activity of the TUNE Project under the Erasmus+ CBHE programme. The event supports the project’s mission to strengthen green skills education, improve graduate employability, and promote collaboration among universities, industry, policymakers, and international partners across ASEAN and Europe.
+                    </p>
+                    
+                    <!-- Đoạn text bị ẩn đi -->
+                    <div id="more-text" class="hidden mt-4">
+                        <p>
+                            Amid global climate change, energy transition, digital transformation, and sustainable development commitments, demand for green jobs and future-ready skills is growing rapidly across sectors such as energy, transport, agriculture, buildings, forestry, waste management, artificial intelligence, and digital technologies. The conference provides an international platform for policy dialogue, academic exchange, industry engagement, and partnership development related to green jobs, sustainability transitions, and workforce transformation. 
+                        </p>
+                        <p class="mt-4">
+                            The exhibition will showcase green technologies, educational initiatives, student innovations, startup ideas, and practical industry solutions that support sustainable development and green career pathways. Through demonstrations, networking sessions, innovation showcases, career-oriented activities, and partnership meetings, the event aims to strengthen education–industry linkages and create new opportunities for ASEAN–EU collaboration.
+                        </p>
+                    </div>
 
-                </p>
+                    <!-- Nút bấm Read More -->
+                    <button id="read-more-btn" class="mt-4 inline-flex items-center gap-2 text-brand-teal font-semibold hover:text-brand-blue transition duration-300 focus:outline-none">
+                        <span>Read More</span>
+                        <i class="fas fa-chevron-down text-sm transition-transform duration-300" id="read-more-icon"></i>
+                    </button>
+                </div>
             </div>
 
             <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 hover:shadow-md transition">
@@ -146,6 +168,7 @@
                 </div>
             </div>
         </div>
+        <!-- KẾT THÚC: KHU VỰC ĐÃ ĐƯỢC CẬP NHẬT READ MORE -->
 
         <section class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
             <div class="flex items-center gap-3 mb-8">
@@ -180,7 +203,6 @@
             </div>
         </section>
 
-        <!-- BẮT ĐẦU: PHẦN KEYNOTE SPEAKERS -->
         <section class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
             <div class="flex items-center gap-3 mb-8">
                 <div class="w-2 h-8 bg-brand-teal rounded-full"></div>
@@ -225,9 +247,7 @@
                 </div>
             </div>
         </section>
-        <!-- KẾT THÚC: PHẦN KEYNOTE SPEAKERS -->
 
-        <!-- BẮT ĐẦU: PHẦN INVITED SPEAKERS MỚI THÊM -->
         <section class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
             <div class="flex items-center gap-3 mb-8">
                 <div class="w-2 h-8 bg-brand-teal rounded-full"></div>
@@ -272,7 +292,6 @@
                 </div>
             </div>
         </section>
-        <!-- KẾT THÚC: PHẦN INVITED SPEAKERS MỚI THÊM -->
 
         <section class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
             <div class="flex items-center gap-3 mb-8">
@@ -412,13 +431,39 @@
             </div>
         </div>
     </footer>
+
+    <!-- BẮT ĐẦU: ĐOẠN SCRIPT XỬ LÝ SỰ KIỆN (Bao gồm cả Read More) -->
     <script>
+        // Xử lý menu mobile
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('main-menu');
+        if(btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        }
 
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
+        // Xử lý chức năng Read More cho phần ICEGJ Introduction
+        const readMoreBtn = document.getElementById('read-more-btn');
+        const moreText = document.getElementById('more-text');
+        const readMoreIcon = document.getElementById('read-more-icon');
+
+        if(readMoreBtn && moreText && readMoreIcon) {
+            readMoreBtn.addEventListener('click', () => {
+                // Toggle ẩn/hiện văn bản
+                moreText.classList.toggle('hidden');
+                
+                // Thay đổi text và icon của nút
+                if (moreText.classList.contains('hidden')) {
+                    readMoreBtn.querySelector('span').innerText = 'Read More';
+                    readMoreIcon.classList.remove('rotate-180');
+                } else {
+                    readMoreBtn.querySelector('span').innerText = 'Read Less';
+                    readMoreIcon.classList.add('rotate-180');
+                }
+            });
+        }
     </script>
+    <!-- KẾT THÚC: ĐOẠN SCRIPT XỬ LÝ SỰ KIỆN -->
 </body>
 </html>
