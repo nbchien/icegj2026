@@ -250,10 +250,16 @@
                         </div>
         
                         <!-- Thông tin cá nhân -->
-                        <div class="text-left">
+                        <div class="text-left flex flex-col gap-1"> <!-- Thêm flex flex-col gap-1 để khoảng cách đẹp hơn -->
                             <h4 class="font-bold text-gray-900 text-lg leading-tight">Assoc.Prof Nguyen Duc Tuyen</h4>
-                            <p class="text-sm font-medium text-brand-blue mt-1">Hanoi University of Science and Technology</p>
-                            <p class="text-xs text-gray-500 mt-1"><i class="fas fa-envelope mr-1"></i> tuyen.nguyenduc@hust.edu.vn</p>
+                            <p class="text-sm font-medium text-brand-blue">Hanoi University of Science and Technology</p>
+            
+                            <!-- ĐÃ SỬA: Container mới cho Email: flex items-center gap-2 text-xs text-gray-500 -->
+                            <div class="flex items-center gap-2 text-xs text-gray-500 mt-1"> 
+                                <i class="fas fa-envelope"></i>
+                                <!-- break-words để xử lý email quá dài, biến email thành liên kết mailto -->
+                                <a href="mailto:tuyen.nguyenduc@hust.edu.vn" class="hover:text-brand-teal break-words">tuyen.nguyenduc@hust.edu.vn</a>
+                            </div>
                         </div>
                     </div>
 
