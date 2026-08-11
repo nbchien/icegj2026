@@ -365,22 +365,94 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Invited Speaker 1 -->
-                <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 hover:shadow-md hover:-translate-y-1 transition duration-300 text-center flex flex-col items-center">
-                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4 shadow-sm border border-gray-100 text-brand-blue">
-                        <i class="fas fa-user-tie text-2xl"></i>
+                <!-- Invited Speaker 1 - Prof. Byoung-Hwa Lee -->
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 hover:shadow-md hover:-translate-y-1 transition duration-300 flex flex-col h-full">
+    
+                    <!-- Phần 1: Ảnh và Thông tin cá nhân cơ bản -->
+                    <div class="flex flex-col items-center text-center mb-2">
+                        <!-- Ảnh đại diện -->
+                        <div class="w-24 h-24 rounded-full overflow-hidden shadow-sm border-2 border-white flex-shrink-0 mb-2">
+                            <img src="assets/speakers/Prof_Byoung.png" alt="Prof. Byoung-Hwa Lee" class="w-full h-full object-cover">
+                        </div>
+    
+                        <!-- Thông tin cá nhân -->
+                        <div class="flex flex-col items-center gap-1">
+                            <h4 class="font-bold text-gray-900 text-lg leading-tight">R. Prof. Byoung-Hwa Lee</h4>
+                            <p class="text-sm font-medium text-brand-blue">Pusan National University</p>
+        
+                            <!-- Container cho Email đã được căn giữa -->
+                            <div class="flex items-center justify-center gap-2 text-xs text-gray-500 mt-1"> 
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:bhlee@pusan.ac.kr" class="hover:text-brand-teal break-words">Email</a>
+                            </div>
+                        </div>
                     </div>
-                    <h4 class="font-bold text-gray-900 mb-2">Prof. Byoung-Hwa Lee (Tim.)</h4>
-                    <p class="text-sm text-gray-600">Pusan National University (Korea)</p>
+
+                    <!-- Đường kẻ phân cách -->
+                    <hr class="border-slate-200 my-2">
+
+                    <!-- Phần 2: Nội dung bài thuyết trình -->
+                    <div class="text-left flex-1 mt-2">
+                        <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Presentation Topic</p>
+                        <!-- Tiêu đề bài thuyết trình -->
+                        <h5 class="font-bold text-gray-800 mb-2 leading-snug">
+                            Green Ammonia Combustion: Technology Development and Demonstration Strategy in Korea
+                        </h5>
+                        <!-- Tóm tắt nội dung -->
+                        <p class="text-sm text-gray-600 line-clamp-3">
+                            Amid the global transition toward carbon neutrality, ammonia (NH₃) is emerging as a key carbon-free fuel and hydrogen carrier for decarbonizing coal- and LNG-fired power generation...
+                        </p>
+        
+                        <!-- Nút xem chi tiết (Tùy chọn) -->
+                        <button onclick="openModal('abstract-modal-byoung')" class="inline-block mt-3 text-sm text-brand-teal font-medium hover:underline text-left cursor-pointer appearance-none bg-transparent border-none p-0">
+                            Read full abstract &rarr;
+                        </button>
+                    </div>
                 </div>
                 
-                <!-- Invited Speaker 2 -->
-                <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 hover:shadow-md hover:-translate-y-1 transition duration-300 text-center flex flex-col items-center">
-                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4 shadow-sm border border-gray-100 text-brand-blue">
-                        <i class="fas fa-user-tie text-2xl"></i>
+                <!-- Invited Speaker 2 - Prof. Dr. Norhazilan Md Noor -->
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 hover:shadow-md hover:-translate-y-1 transition duration-300 flex flex-col h-full">
+    
+                    <!-- Phần 1: Ảnh và Thông tin cá nhân cơ bản -->
+                    <div class="flex flex-col items-center text-center mb-2">
+                        <!-- Ảnh đại diện -->
+                        <div class="w-24 h-24 rounded-full overflow-hidden shadow-sm border-2 border-white flex-shrink-0 mb-2">
+                            <img src="assets/speakers/Prof_Norhazilan.png" alt="Prof. Norhazilan Md Noor" class="w-full h-full object-cover">
+                        </div>
+    
+                        <!-- Thông tin cá nhân -->
+                        <div class="flex flex-col items-center gap-1">
+                            <h4 class="font-bold text-gray-900 text-lg leading-tight">Prof. Norhazilan Md Noor</h4>
+                            <p class="text-sm font-medium text-brand-blue">Universiti Teknologi Malaysia</p>
+        
+                            <!-- Container cho Email đã được căn giữa -->
+                            <div class="flex items-center justify-center gap-2 text-xs text-gray-500 mt-1"> 
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:norhazilan@utm.my" class="hover:text-brand-teal break-words">Email</a>
+                            </div>
+                        </div>
                     </div>
-                    <h4 class="font-bold text-gray-900 mb-2">Prof. Dr. Norhazilan Md Noor</h4>
-                    <p class="text-sm text-gray-600">Universiti Teknologi Malaysia (UTM) - AUNSEED.Net</p>
+
+                    <!-- Đường kẻ phân cách -->
+                    <hr class="border-slate-200 my-2">
+
+                    <!-- Phần 2: Nội dung bài thuyết trình -->
+                    <div class="text-left flex-1 mt-2">
+                        <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Presentation Topic</p>
+                        <!-- Tiêu đề bài thuyết trình -->
+                        <h5 class="font-bold text-gray-800 mb-2 leading-snug">
+                            Life-Cycle Engineering and Green Jobs: Transforming Infrastructure Inspection and Maintenance for a Net-Zero Future
+                        </h5>
+                        <!-- Tóm tắt nội dung -->
+                        <p class="text-sm text-gray-600 line-clamp-3">
+                            The transition towards a net-zero future is reshaping the civil engineering profession by creating new opportunities for green jobs that extend beyond the conventional focus on the design and construction...
+                        </p>
+        
+                        <!-- Nút xem chi tiết (Tùy chọn) -->
+                        <button onclick="openModal('abstract-modal-norhazilan')" class="inline-block mt-3 text-sm text-brand-teal font-medium hover:underline text-left cursor-pointer appearance-none bg-transparent border-none p-0">
+                            Read full abstract &rarr;
+                        </button>
+                    </div>
                 </div>
                 
                 <!-- Invited Speaker 3 -->
@@ -392,13 +464,49 @@
                     <p class="text-sm text-gray-600">TalentCorp (Head (Southern Region & Data Centre Sector))</p>
                 </div>
                 
-                <!-- Invited Speaker 4 -->
-                <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 hover:shadow-md hover:-translate-y-1 transition duration-300 text-center flex flex-col items-center">
-                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4 shadow-sm border border-gray-100 text-brand-blue">
-                        <i class="fas fa-user-tie text-2xl"></i>
+                <!-- Invited Speaker 4 - Chorirotun Nur Ulifah  -->
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 hover:shadow-md hover:-translate-y-1 transition duration-300 flex flex-col h-full">
+    
+                    <!-- Phần 1: Ảnh và Thông tin cá nhân cơ bản -->
+                    <div class="flex flex-col items-center text-center mb-2">
+                        <!-- Ảnh đại diện -->
+                        <div class="w-24 h-24 rounded-full overflow-hidden shadow-sm border-2 border-white flex-shrink-0 mb-2">
+                            <img src="assets/speakers/Prof_Ulifah.png" alt="Dr. Chorirotun Nur Ulifah" class="w-full h-full object-cover">
+                        </div>
+    
+                        <!-- Thông tin cá nhân -->
+                        <div class="flex flex-col items-center gap-1">
+                            <h4 class="font-bold text-gray-900 text-lg leading-tight">Dr. Chorirotun Nur Ulifah</h4>
+                            <p class="text-sm font-medium text-brand-blue">Perhutani Forestry Institute, Perum Perhutani, Indonesia</p>
+        
+                            <!-- Container cho Email đã được căn giữa -->
+                            <div class="flex items-center justify-center gap-2 text-xs text-gray-500 mt-1"> 
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:ulifah@perhutani.co.id" class="hover:text-brand-teal break-words">Email</a>
+                            </div>
+                        </div>
                     </div>
-                    <h4 class="font-bold text-gray-900 mb-2">Chorirotun Nur Ulifah</h4>
-                    <p class="text-sm text-gray-600">Perhutani Forestry Institute - Indonesia</p>
+
+                    <!-- Đường kẻ phân cách -->
+                    <hr class="border-slate-200 my-2">
+
+                    <!-- Phần 2: Nội dung bài thuyết trình -->
+                    <div class="text-left flex-1 mt-2">
+                        <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Presentation Topic</p>
+                        <!-- Tiêu đề bài thuyết trình -->
+                        <h5 class="font-bold text-gray-800 mb-2 leading-snug">
+                            Life-Cycle Engineering and Green Jobs: Transforming Infrastructure Inspection and Maintenance for a Net-Zero Future
+                        </h5>
+                        <!-- Tóm tắt nội dung -->
+                        <p class="text-sm text-gray-600 line-clamp-3">
+                            The transition towards a net-zero future is reshaping the civil engineering profession by creating new opportunities for green jobs that extend beyond the conventional focus on the design and construction...
+                        </p>
+        
+                        <!-- Nút xem chi tiết (Tùy chọn) -->
+                        <button onclick="openModal('abstract-modal-ulifah')" class="inline-block mt-3 text-sm text-brand-teal font-medium hover:underline text-left cursor-pointer appearance-none bg-transparent border-none p-0">
+                            Read full abstract &rarr;
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
