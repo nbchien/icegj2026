@@ -242,22 +242,20 @@
                 <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 hover:shadow-md hover:-translate-y-1 transition duration-300 flex flex-col h-full">
     
                     <!-- Phần 1: Ảnh và Thông tin cá nhân cơ bản -->
-                    <div class="flex items-center gap-4 mb-4">
-                        <!-- Ảnh đại diện (Thay thế icon cũ) -->
-                        <div class="w-20 h-20 rounded-full overflow-hidden shadow-sm border-2 border-white flex-shrink-0">
-                            <!-- Bạn thay link ảnh thực tế vào thuộc tính src dưới đây -->
+                    <div class="flex flex-col items-center text-center mb-4">
+                        <!-- Ảnh đại diện -->
+                        <div class="w-24 h-24 rounded-full overflow-hidden shadow-sm border-2 border-white flex-shrink-0 mb-4">
                             <img src="assets/speakers/Prof_Tuyen.png" alt="Assoc.Prof Nguyen Duc Tuyen" class="w-full h-full object-cover">
                         </div>
-        
+    
                         <!-- Thông tin cá nhân -->
-                        <div class="text-left flex flex-col gap-1"> <!-- Thêm flex flex-col gap-1 để khoảng cách đẹp hơn -->
+                        <div class="flex flex-col items-center gap-1">
                             <h4 class="font-bold text-gray-900 text-lg leading-tight">Assoc.Prof Nguyen Duc Tuyen</h4>
                             <p class="text-sm font-medium text-brand-blue">Hanoi University of Science and Technology</p>
-            
-                            <!-- ĐÃ SỬA: Container mới cho Email: flex items-center gap-2 text-xs text-gray-500 -->
-                            <div class="flex items-center gap-2 text-xs text-gray-500 mt-1"> 
+        
+                            <!-- Container cho Email đã được căn giữa -->
+                            <div class="flex items-center justify-center gap-2 text-xs text-gray-500 mt-1"> 
                                 <i class="fas fa-envelope"></i>
-                                <!-- break-words để xử lý email quá dài, biến email thành liên kết mailto -->
                                 <a href="mailto:tuyen.nguyenduc@hust.edu.vn" class="hover:text-brand-teal break-words">Email</a>
                             </div>
                         </div>
