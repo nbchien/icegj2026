@@ -40,10 +40,10 @@
 </head>
 <body class="bg-slate-100 text-gray-800 font-sans antialiased">
 
+    <!-- NAVIGATION -->
     <nav class="bg-brand-blue text-white sticky top-0 z-50 shadow-lg relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                
                 <div class="flex items-center gap-3">
                     <div class="bg-brand-teal text-white p-2 rounded-lg">
                         <i class="fas fa-leaf text-xl"></i>
@@ -61,22 +61,17 @@
 
         <div id="main-menu" class="hidden absolute top-20 left-0 w-full bg-brand-blue shadow-xl border-t border-brand-teal/30 md:border-none md:shadow-none md:bg-transparent md:static md:w-auto md:flex md:items-center z-40">
             <div class="flex flex-col md:flex-row px-6 py-4 md:p-0 space-y-2 md:space-y-0 md:space-x-1 max-w-7xl mx-auto md:px-8 w-full justify-end">
-                
                 <a href="../index.html" class="text-white hover:bg-white/10 hover:text-brand-teal px-4 py-2 rounded-md text-base md:text-sm font-medium transition duration-200 block text-center md:inline-block">Home</a>
-                
                 <a href="../exhibition/index.html" class="bg-brand-teal text-brand-dark px-4 py-2 rounded-md text-base md:text-sm font-bold shadow-md block text-center md:inline-block">Exhibition</a>
-                
                 <a href="../important-information/index.html" class="text-white hover:bg-white/10 hover:text-brand-teal px-4 py-2 rounded-md text-base md:text-sm font-medium transition duration-200 block text-center md:inline-block">Important Dates</a>
-                
                 <a href="../submissions/index.html" class="text-white hover:bg-white/10 hover:text-brand-teal px-4 py-2 rounded-md text-base md:text-sm font-medium transition duration-200 block text-center md:inline-block">Submission</a>
-                
                 <a href="../registration/index.html" class="text-white hover:bg-white/10 hover:text-brand-teal px-4 py-2 rounded-md text-base md:text-sm font-medium transition duration-200 block text-center md:inline-block">Registration</a>
-                
                 <a href="../program/index.html" class="text-white hover:bg-white/10 hover:text-brand-teal px-4 py-2 rounded-md text-base md:text-sm font-medium transition duration-200 block text-center md:inline-block">Program</a>
             </div>
         </div>
     </nav>
 
+    <!-- HEADER BANNER -->
     <header class="relative bg-brand-dark overflow-hidden py-16">
         <div class="absolute inset-0">
             <img src="assets/banner3.jpg" alt="Conference Banner" class="w-full h-full object-cover opacity-20">
@@ -120,6 +115,7 @@
                 .flip-card-back { transform: rotateY(180deg); }
             </style>
 
+            <!-- SECTION 1: EXHIBITION FEATURES -->
             <div>
                 <div class="flex items-center gap-3 mb-6">
                     <div class="w-2 h-8 bg-brand-teal rounded-full"></div>
@@ -218,6 +214,33 @@
 
             <hr class="border-gray-200">
 
+            <!-- ========================================== -->
+            <!-- SECTION 2: PARTICIPATING BOOTHS (MỚI THÊM) -->
+            <!-- ========================================== -->
+            <div>
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-8 bg-brand-teal rounded-full"></div>
+                        <div>
+                            <h3 class="text-2xl font-heading font-bold text-brand-blue uppercase">Participating Booths</h3>
+                        </div>
+                    </div>
+                    <span class="text-xs bg-brand-teal/15 text-brand-blue px-3 py-1.5 rounded-full font-semibold border border-brand-teal/30 self-start sm:self-auto">
+                        <i class="fas fa-store-alt text-brand-teal mr-1"></i> Interactive Floor Directory
+                    </span>
+                </div>
+
+                <p class="text-gray-600 text-sm mb-8 leading-relaxed">
+                    Explore our featured exhibitors leading the transition to Net Zero. Click on any booth card to view full contact details, web links, and company profiles.
+                </p>
+
+                <!-- Booths Grid Container (Rendered dynamically via JS) -->
+                <div id="booth-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            </div>
+
+            <hr class="border-gray-200">
+
+            <!-- SECTION 3: ORGANIZING COMMITTEE -->
             <div>
                 <div class="flex items-center gap-3 mb-6">
                     <div class="w-2 h-8 bg-brand-blue rounded-full"></div>
@@ -339,6 +362,7 @@
 
     </main>
 
+    <!-- FOOTER -->
     <footer class="bg-brand-dark text-gray-400 py-10 mt-12 border-t-4 border-brand-teal">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center gap-3">
@@ -352,12 +376,206 @@
             </div>
         </div>
     </footer>
-    <script>
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('main-menu'); // Thầy đổi từ 'mobile-menu' thành 'main-menu'
 
+    <!-- ========================================== -->
+    <!-- MODAL CHI TIẾT GIAN HÀNG (POPUP) -->
+    <!-- ========================================== -->
+    <div id="booth-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-brand-dark/70 backdrop-blur-sm transition-opacity duration-300">
+        <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl border border-slate-100 transform transition-all duration-300 scale-95 opacity-0" id="modal-box">
+            
+            <!-- Modal Header -->
+            <div class="bg-brand-blue p-6 text-white relative">
+                <div class="flex items-center justify-between">
+                    <span id="modal-booth-code" class="text-xs font-bold uppercase tracking-wider bg-brand-teal text-brand-dark px-2.5 py-1 rounded-full">Booth A-01</span>
+                    <button onclick="closeBoothModal()" class="text-gray-300 hover:text-white hover:bg-white/10 w-8 h-8 rounded-full flex items-center justify-center transition focus:outline-none">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <h3 id="modal-booth-name" class="font-heading font-bold text-2xl text-white mt-3 leading-snug">Company Name</h3>
+                <p id="modal-booth-category" class="text-xs text-brand-teal mt-1 font-medium"><i class="fas fa-tag mr-1"></i> Category</p>
+            </div>
+
+            <!-- Modal Content Body -->
+            <div class="p-6 space-y-5 text-gray-700">
+                
+                <!-- Short Introduction -->
+                <div>
+                    <h5 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1.5">Short Introduction</h5>
+                    <p id="modal-booth-intro" class="text-sm leading-relaxed text-gray-600 bg-slate-50 p-3.5 rounded-xl border border-slate-200/70">
+                        Introduction content goes here.
+                    </p>
+                </div>
+
+                <!-- Contact & Web Info -->
+                <div class="space-y-2.5 text-sm">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-teal-50 text-brand-teal flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="truncate">
+                            <span class="text-xs text-gray-400 block font-medium">Official Website</span>
+                            <a id="modal-booth-website" href="#" target="_blank" rel="noopener noreferrer" class="text-brand-blue font-semibold hover:text-brand-teal hover:underline flex items-center gap-1.5">
+                                <span>https://example.com</span>
+                                <i class="fas fa-external-link-alt text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-blue-50 text-brand-blue flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="truncate">
+                            <span class="text-xs text-gray-400 block font-medium">Email Inquiry</span>
+                            <a id="modal-booth-email" href="#" class="text-gray-700 hover:text-brand-blue font-medium">contact@example.com</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-gray-400 block font-medium">Phone / Hotline</span>
+                            <span id="modal-booth-phone" class="text-gray-700 font-medium">+84 (0) 123 456 789</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-slate-100 text-slate-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i class="fas fa-map-pin"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-gray-400 block font-medium">Exhibition Location</span>
+                            <span id="modal-booth-location" class="text-gray-700 font-medium">Hall B - Booth 01</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Modal Footer Button -->
+            <div class="p-4 bg-slate-50 border-t border-slate-100 flex justify-end">
+                <button onclick="closeBoothModal()" class="px-5 py-2 text-sm font-semibold rounded-lg bg-slate-200 hover:bg-slate-300 text-gray-700 transition">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('main-menu');
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
+        });
+
+        // -------------------------------------------------------------
+        // DỮ LIỆU CÁC GIAN HÀNG (Dễ dàng thay đổi hoặc thêm gian hàng mới)
+        // -------------------------------------------------------------
+        const boothsData = [
+            {
+                id: 1,
+                code: "Booth - GIZ TVET",
+                name: "EU-Viet Nam TVET Programme (VETVET) - GIZ GmbH",
+                category: "Technical and Vocational Education and Training (TVET)",
+                icon: "fa-graduation-cap",
+                website: "https://www.tvet-vietnam.org/vi/", // Hoặc https://www.giz.de
+                email: "beate.dippmar@giz.de",
+                phone: "+84 93 629 51 90",
+                location: "Kích thước: 3 x 2 x 2.5 m",
+                shortIntro: "The VETVET exhibition booth showcases its approaches, key results and achieves, publications, and practical tools that support TVET institutions in greening their training programmes and pedagogy, learning environments, institutional culture, governance, and partnerships for a net-zero economy transition."
+            }
+            
+        ];
+
+        // -------------------------------------------------------------
+        // RENDER DANH SÁCH GIAN HÀNG RA GIAO DIỆN
+        // -------------------------------------------------------------
+        const boothGrid = document.getElementById('booth-grid');
+        boothGrid.innerHTML = boothsData.map(booth => `
+            <div onclick="openBoothModal(${booth.id})" 
+                 class="group bg-slate-50 hover:bg-white border border-slate-200 hover:border-brand-teal rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-brand-blue/10 text-brand-blue group-hover:bg-brand-teal group-hover:text-brand-dark text-xs font-bold px-2.5 py-1 rounded-md transition-colors">
+                            ${booth.code}
+                        </span>
+                        <div class="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-brand-blue group-hover:text-brand-teal group-hover:border-brand-teal/50 transition">
+                            <i class="fas ${booth.icon} text-lg"></i>
+                        </div>
+                    </div>
+                    <h4 class="font-heading font-bold text-lg text-brand-blue group-hover:text-teal-600 transition mb-1 leading-snug">
+                        ${booth.name}
+                    </h4>
+                    <p class="text-xs text-gray-500 font-medium mb-3">${booth.category}</p>
+                    <p class="text-sm text-gray-600 line-clamp-2 leading-relaxed">
+                        ${booth.shortIntro}
+                    </p>
+                </div>
+                <div class="mt-5 pt-4 border-t border-slate-200/70 flex items-center justify-between text-xs font-semibold text-brand-blue group-hover:text-teal-600">
+                    <span>View Details</span>
+                    <i class="fas fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                </div>
+            </div>
+        `).join('');
+
+        // -------------------------------------------------------------
+        // XỬ LÝ MODAL POPUP CHI TIẾT
+        // -------------------------------------------------------------
+        const modal = document.getElementById('booth-modal');
+        const modalBox = document.getElementById('modal-box');
+
+        function openBoothModal(boothId) {
+            const booth = boothsData.find(b => b.id === boothId);
+            if (!booth) return;
+
+            document.getElementById('modal-booth-code').innerText = booth.code;
+            document.getElementById('modal-booth-name').innerText = booth.name;
+            document.getElementById('modal-booth-category').innerHTML = `<i class="fas fa-tag mr-1"></i> ${booth.category}`;
+            document.getElementById('modal-booth-intro').innerText = booth.shortIntro;
+            
+            const websiteEl = document.getElementById('modal-booth-website');
+            websiteEl.href = booth.website;
+            websiteEl.querySelector('span').innerText = booth.website.replace('https://', '');
+
+            const emailEl = document.getElementById('modal-booth-email');
+            emailEl.href = `mailto:${booth.email}`;
+            emailEl.innerText = booth.email;
+
+            document.getElementById('modal-booth-phone').innerText = booth.phone;
+            document.getElementById('modal-booth-location').innerText = booth.location;
+
+            // Hiển thị modal với hiệu ứng smooth
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modalBox.classList.remove('scale-95', 'opacity-0');
+                modalBox.classList.add('scale-100', 'opacity-100');
+            }, 10);
+            document.body.style.overflow = 'hidden'; // Ngăn cuộn trang phía sau
+        }
+
+        function closeBoothModal() {
+            modalBox.classList.remove('scale-100', 'opacity-100');
+            modalBox.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }, 200);
+        }
+
+        // Đóng khi click ngoài vùng modal box
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeBoothModal();
+        });
+
+        // Đóng khi ấn phím Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeBoothModal();
+            }
         });
     </script>
 </body>
