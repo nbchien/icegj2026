@@ -1,64 +1,172 @@
-This template is folk from Mike Pierce [explore it live here](https://mikepierce.github.io/conference-website-template/) but I change a lot to adapt our confernce.
+# ICEGJ 2026 - Website Hội thảo & Triển lãm Quốc tế về Việc làm Xanh
 
-## Installation
+Website chính thức của **The 1st International Conference and Exhibition on Green Jobs for a Net Zero Future (ICEGJ 2026)**.
 
-If you have access to a server for web hosting, 
-perhaps through your company/university or department, 
-then using this template is as easy as cloning this repository 
-directly into your public HTML directory.
-If not you can pretty easily host a website using this template with [GitHub Pages](https://pages.github.com/).
-See that link for more details, but the basic procedure is this:
+- **Thời gian:** 26 – 28 tháng 10 năm 2026
+- **Địa điểm:** Đại học Bách khoa Hà Nội (HUST), Hà Nội, Việt Nam
+- **Tên miền chính thức:** [www.icegj.org](https://www.icegj.org)
 
- 1. Create a GitHub repository named `username.github.io`, 
- where *username* is your username on GitHub.
+---
 
- 2. Click the *Use this template* button above, 
- being sure to give your copy of this repository a more apt name,
- like *awesome-conference*.
+## 📌 Tổng quan dự án
 
- 3. In your copy go to *Settings* and scroll down to *GitHub Pages*.
- Under *Source* choose the master branch of your forked copy.
- Then your copy of the website will be hosted at `username.github.io/awesome-conference`.
+Trang web được xây dựng dưới dạng **Static Website (HTML/CSS/JavaScript thuần)**, tối ưu cho tốc độ tải trang cao, tính tương thích di động hoàn hảo và khả năng lưu trữ miễn phí thông qua **GitHub Pages** (kết hợp custom domain).
 
-## Editing the Template
+### Công nghệ sử dụng
+- **HTML5 & CSS3** hiện đại, chuẩn ngữ nghĩa (semantic tags).
+- **Tailwind CSS (CDN)**: Quản lý giao diện, bố cục responsive và hệ thống màu sắc nhận diện thương hiệu.
+- **Font Awesome 6.0**: Bộ icon trực quan.
+- **Google Fonts**: Phông chữ `Montserrat` (tiêu đề/heading) và `Poppins` (nội dung/body).
+- **Vanilla JavaScript**: Xử lý logic chuyển đổi menu trên thiết bị di động (Mobile responsive hamburger menu).
 
-If you have not edited HTML/CSS to design a webpage before, 
-I encourage you to read 
-[How to Build a Personal Webpage from Scratch](https://rutar.org/writing/how-to-build-a-personal-webpage-from-scratch/)
-by Alex Rutar, particularly the 
-[Crash course in HTML and CSS](https://rutar.org/writing/how-to-build-a-personal-webpage-from-scratch/#crash-course-in-html-and-css) 
-section.
+---
 
-## Beautiful Math with MathJax (optional)
+## 📂 Cấu trúc thư mục
 
-It may be helpful to include mathematical notation on this website, especially in the abstracts of talks. 
-This can be done using [MathJax](https://github.com/mathjax/MathJax).
-For an example see the [*programs* page](https://mikepierce.github.io/conference-website-template/program/) of the template site.
-To include math in a page of this website, include the lines
+```text
+icegj2026/
+├── index.html                     # Trang chủ (Giới thiệu, Diễn giả, Ban tổ chức, Chủ đề, Địa điểm, Đối tác)
+├── exhibition/
+│   └── index.html                 # Trang Triển lãm (Thông tin gian hàng, sơ đồ mặt bằng, bảng giá, đăng ký)
+├── important-information/
+│   └── index.html                 # Trang Mốc thời gian quan trọng (Deadlines nộp bài, thông báo, địa điểm)
+├── submissions/
+│   └── index.html                 # Trang Hướng dẫn nộp bài (Quy định, mẫu template, cổng nộp EasyChair)
+├── registration/
+│   └── index.html                 # Trang Đăng ký tham dự (Biểu phí, đối tượng tham dự, tài khoản ngân hàng)
+├── program/
+│   └── index.html                 # Trang Chương trình hội thảo (Lịch trình chi tiết 3 ngày, phiên báo cáo)
+├── directions/
+│   └── index.html                 # [Legacy] Trang chỉ dẫn đường đi
+├── assets/
+│   ├── main.css                   # Tùy biến CSS bổ sung
+│   ├── banner.jpg, banner1...     # Hình ảnh banner và hình nền
+│   ├── hust.png, sme.png...       # Logo các trường đại học, ban ngành, nhà tài trợ
+│   ├── fee.png, topics.png...     # Hình ảnh minh họa bảng phí, chủ đề
+│   ├── speakers/                  # Ảnh chân dung các diễn giả chính (Keynote Speakers)
+│   │   ├── Ms_ThuyTien.png
+│   │   ├── Prof_Byoung.png
+│   │   └── ...
+│   └── template/                  # Tài liệu mẫu cho tác giả nộp bài
+│       ├── Abstract Template.docx # Mẫu tóm tắt bài báo (Abstract)
+│       └── Paper Template.docx    # Mẫu bài báo đầy đủ (Full Paper)
+├── CNAME                          # Cấu hình Custom Domain (www.icegj.org) cho GitHub Pages
+├── sitemap.xml                    # Sơ đồ website phục vụ SEO và Google Search Console
+└── README.md                      # Tài liệu hướng dẫn quản trị và phát triển website
+```
 
-````HTML
-<script type="text/javascript" async 
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=default"> 
-</script>
-````
+---
 
-in the `<head>` of the HTML file. Then math can by typeset by using LaTeX's math notation enclosed in `\(...\)` delimiters.
+## 💻 Hướng dẫn chạy và xem thử cục bộ (Local Development)
 
-## Sitemap (optional)
+Vì đây là trang web tĩnh, bạn không cần cài đặt các framework phức tạp (như Node.js/PHP/Ruby) để chạy:
 
-The file `sitemap.xml` helps search engines understand the structure of your site.
-In this file, each instance of "WEBSITE" should be replaced
-with the actual address where this website is being hosted.
-See the [sitemaps protocol page](https://www.sitemaps.org/protocol.html) for more details.
+### Cách 1: Sử dụng Extension "Live Server" trên Visual Studio Code (Khuyên dùng)
+1. Mở thư mục dự án trong VS Code.
+2. Cài đặt extension **Live Server** (tác giả *Ritwick Dey*).
+3. Nhấp chuột phải vào tệp `index.html` và chọn **Open with Live Server** (hoặc bấm nút `Go Live` ở góc dưới bên phải).
 
-## Alternatives
+### Cách 2: Sử dụng Python
+Nếu máy tính đã cài đặt Python:
+```bash
+# Di chuyển vào thư mục dự án
+cd icegj2026
 
-The simplicity of the HTML/CSS source for this template is its strongest feature.
-For something more slick or modern or sophisticated or complicated:
+# Khởi chạy server nội bộ (port 8000)
+python -m http.server 8000
+```
+Mở trình duyệt và truy cập `http://localhost:8000`.
 
- - [Hoverboard](https://github.com/gdg-x/hoverboard) is beautiful but requires some tech know-how to setup. 
+### Cách 3: Sử dụng Node.js (`npx serve`)
+```bash
+npx serve .
+```
 
- - You can build something from scratch based on a 
- [GitHub Pages site with Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll) 
- or a template from [Pixelarity](https://pixelarity.com).
+---
 
+## 🛠 Hướng dẫn chỉnh sửa & Cập nhật nội dung
+
+### 1. Bảng màu thương hiệu (Brand Theme)
+Các trang đều thống nhất cấu hình Tailwind CSS trong thẻ `<script>` ở phần `<head>`:
+```javascript
+tailwind.config = {
+    theme: {
+        extend: {
+            fontFamily: {
+                sans: ['Poppins', 'sans-serif'],
+                heading: ['Montserrat', 'sans-serif'],
+            },
+            colors: {
+                brand: {
+                    blue: '#1e3a8a',  /* Xanh dương đậm chủ đạo */
+                    teal: '#2dd4bf',  /* Xanh ngọc / Mint điểm nhấn */
+                    dark: '#0f172a',  /* Xanh đen nền */
+                    light: '#f8fafc', /* Trắng xám */
+                }
+            }
+        }
+    }
+}
+```
+Nếu muốn thay đổi màu sắc nhận diện, hãy điều chỉnh mã HEX tương ứng trên các trang.
+
+### 2. Cập nhật mốc thời gian quan trọng (Important Dates)
+- Mở tệp `important-information/index.html` và phần "Important Dates" trên `index.html`.
+- Chỉnh sửa các mốc:
+  - Hạn nộp tóm tắt (Abstract Submission)
+  - Thông báo chấp nhận (Notification of Acceptance)
+  - Hạn nộp bài hoàn chỉnh (Full Paper Deadline)
+  - Hạn đăng ký sớm (Early Bird Registration)
+  - Ngày diễn ra hội thảo (Conference Dates: 26 - 28/10/2026)
+
+### 3. Cập nhật thông tin diễn giả (Keynote Speakers)
+1. Thêm ảnh chân dung vào thư mục `assets/speakers/` (khuyến nghị ảnh vuông, định dạng `.png` hoặc `.jpg`).
+2. Mở `index.html`, tìm đến khối `Keynote Speakers`.
+3. Cập nhật thông tin: Ảnh, Họ tên, Học hàm/Học vị, Đơn vị công tác, và Tên bài trình bày (Keynote Title).
+
+### 4. Cập nhật biểu phí và tài khoản đăng ký
+- Mở tệp `registration/index.html`.
+- Cập nhật bảng giá cho từng đối tượng (Tác giả quốc tế/trong nước, Người tham dự, Sinh viên, Early bird vs Regular).
+- Cập nhật số tài khoản ngân hàng, tên chủ tài khoản, mã QR chuyển khoản và cú pháp thanh toán.
+
+### 5. Cập nhật tài liệu mẫu nộp bài (Templates)
+- Khi có mẫu định dạng bài báo mới, sao chép tệp `.docx` vào thư mục `assets/template/`.
+- Kiểm tra đường dẫn liên kết tải xuống tại `submissions/index.html`.
+
+---
+
+## 🚀 Hướng dẫn triển khai (Deployment)
+
+### Triển khai trên GitHub Pages với Custom Domain (`www.icegj.org`)
+1. Đẩy mã nguồn lên kho lưu trữ (repository) trên GitHub (nhánh `main` hoặc `master`).
+2. Vào **Settings** > **Pages** của repository:
+   - **Source:** Chọn `Deploy from a branch`.
+   - **Branch:** Chọn `main` (hoặc `master`) và thư mục `/(root)`. Nhấn **Save**.
+3. Tại mục **Custom domain**:
+   - Nhập `www.icegj.org`.
+   - Bật tùy chọn **Enforce HTTPS** (sau khi chứng chỉ SSL được cấp phát xong).
+4. Tệp `CNAME` ở thư mục gốc của repository phải chứa đúng dòng:
+   ```text
+   www.icegj.org
+   ```
+
+### Cấu hình DNS tại nhà cung cấp tên miền
+- **Bản ghi CNAME**:
+  - `Host`: `www`
+  - `Points to`: `<your-github-username>.github.io`
+- **Bản ghi A (Apex domain cho icegj.org nếu cần chuyển hướng về www)**:
+  - `185.199.108.153`
+  - `185.199.109.153`
+  - `185.199.110.153`
+  - `185.199.111.153`
+
+---
+
+## 📞 Liên hệ Ban tổ chức
+
+- **Đơn vị chủ trì:** Đại học Bách khoa Hà Nội (HUST)
+- **Hỗ trợ kỹ thuật & nội dung:** Ban Thư ký Hội thảo ICEGJ 2026
+- **Website:** [https://www.icegj.org](https://www.icegj.org)
+
+## Bản quyền
+- MIT
