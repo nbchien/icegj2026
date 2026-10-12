@@ -501,7 +501,7 @@
             shortIntro: "PUFFER offers portable and customised water treatment for communities, industry, hospitals, and aquaculture—covering seawater treatment, PMRT wastewater systems, UF/RO recycling, and CEB resource recovery to support water efficiency and green skills."
             },
             {
-            id: 3, // Bạn có thể tăng ID theo danh sách hiện có
+            id: 3, // 
             code: "Booth - IOTEAMVN",
             name: "CÔNG TY CỔ PHẦN PHÁT TRIỂN ĐIỆN LỰC VÀ CHUYỂN GIAO CÔNG NGHỆ (IOTEAMVN)", //[cite: 9]
             category: "Giải pháp giám sát năng lượng / IoT", // Trích xuất từ lĩnh vực hoạt động và tên giải pháp[cite: 9]
@@ -511,40 +511,62 @@
             phone: "0968336043", //[cite: 9]
             location: "Gian hàng trưng bày (Booth)", // Trích xuất từ hình thức tham gia[cite: 10]
             shortIntro: "Giải pháp giám sát và quản lý năng lượng thông minh ứng dụng công nghệ loT giúp doanh nghiệp giám sát, phân tích và tối ưu hóa mức tiêu thụ năng lượng theo thời gian thực. Giải pháp hỗ trợ phát hiện các cơ hội tiết kiệm năng lượng, giảm chi phí vận hành và phát thải CO2. Qua đó, doanh nghiệp từng bước xanh hóa hoạt động, nâng cao hiệu quả năng lượng và hướng tới mục tiêu Net Zero." //[cite: 10]
+            },
+            {
+            id: 4, 
+            code: "Booth - THANH AN E&T",
+            name: "Công Ty TNHH Kỹ Thuật & Thương Mại Thành An (Thành An E&T)", 
+            category: "Cơ & Điện / Thiết bị xử lý không khí", // Trích xuất từ lĩnh vực hoạt động và sản phẩm 
+            icon: "fa-fan", // Gợi ý icon cái quạt phù hợp với sản phẩm AHU/Quạt thông gió
+            website: "https://Thanhanet.com", 
+            email: "Huyendinh@thanhanet.vn", 
+            phone: "0347 634 366", 
+            location: "Gian hàng trưng bày (Booth)", 
+            shortIntro: "Thành An E&T là nhà phân phối độc quyền thiết bị xử lý không khí AHU Huber & Ranner và quạt thông gió ELTA (mảng Dự Án Thương Mại) tại Việt Nam. Công ty đã cung cấp thiết bị cho nhiều dự án quy mô lớn như: Nhà máy LEGO Bình Dương, VinFast Hà Tĩnh, Trung tâm dữ liệu FPT, dự án Lumi Hà Nội...",
+            logoUrl: "assets/logos/thanhanlogo.png" //thuộc tính này để chứa đường dẫn logo
             }
             
         ];
 
         // -------------------------------------------------------------
-        // RENDER DANH SÁCH GIAN HÀNG RA GIAO DIỆN
+        // RENDER DANH SÁCH GIAN HÀNG RA GIAO DIỆN (ĐÃ CẬP NHẬT HỖ TRỢ LOGO)
         // -------------------------------------------------------------
         const boothGrid = document.getElementById('booth-grid');
-        boothGrid.innerHTML = boothsData.map(booth => `
-            <div onclick="openBoothModal(${booth.id})" 
-                 class="group bg-slate-50 hover:bg-white border border-slate-200 hover:border-brand-teal rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer flex flex-col justify-between">
-                <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="bg-brand-blue/10 text-brand-blue group-hover:bg-brand-teal group-hover:text-brand-dark text-xs font-bold px-2.5 py-1 rounded-md transition-colors">
-                            ${booth.code}
-                        </span>
-                        <div class="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-brand-blue group-hover:text-brand-teal group-hover:border-brand-teal/50 transition">
-                            <i class="fas ${booth.icon} text-lg"></i>
+        boothGrid.innerHTML = boothsData.map(booth => {
+            
+            // Logic: Nếu có logoUrl thì dùng thẻ <img>, nếu không có thì dùng thẻ <i> (icon)
+            const visualElement = booth.logoUrl 
+                ? `<img src="${booth.logoUrl}" alt="${booth.name} Logo" class="w-full h-full object-contain p-1">`
+                : `<i class="fas ${booth.icon} text-lg"></i>`;
+
+            return `
+                <div onclick="openBoothModal(${booth.id})" 
+                    class="group bg-slate-50 hover:bg-white border border-slate-200 hover:border-brand-teal rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-brand-blue/10 text-brand-blue group-hover:bg-brand-teal group-hover:text-brand-dark text-xs font-bold px-2.5 py-1 rounded-md transition-colors">
+                                ${booth.code}
+                            </span>
+                            <!-- Khung chứa Logo hoặc Icon -->
+                            <div class="w-12 h-12 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-brand-blue group-hover:text-brand-teal group-hover:border-brand-teal/50 transition overflow-hidden">
+                                ${visualElement}
+                            </div>
                         </div>
+                        <h4 class="font-heading font-bold text-lg text-brand-blue group-hover:text-teal-600 transition mb-1 leading-snug">
+                            ${booth.name}
+                        </h4>
+                        <p class="text-xs text-gray-500 font-medium mb-3">${booth.category}</p>
+                        <p class="text-sm text-gray-600 line-clamp-2 leading-relaxed">
+                            ${booth.shortIntro}
+                        </p>
                     </div>
-                    <h4 class="font-heading font-bold text-lg text-brand-blue group-hover:text-teal-600 transition mb-1 leading-snug">
-                        ${booth.name}
-                    </h4>
-                    <p class="text-xs text-gray-500 font-medium mb-3">${booth.category}</p>
-                    <p class="text-sm text-gray-600 line-clamp-2 leading-relaxed">
-                        ${booth.shortIntro}
-                    </p>
+                    <div class="mt-5 pt-4 border-t border-slate-200/70 flex items-center justify-between text-xs font-semibold text-brand-blue group-hover:text-teal-600">
+                        <span>View Details</span>
+                        <i class="fas fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                    </div>
                 </div>
-                <div class="mt-5 pt-4 border-t border-slate-200/70 flex items-center justify-between text-xs font-semibold text-brand-blue group-hover:text-teal-600">
-                    <span>View Details</span>
-                    <i class="fas fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
-                </div>
-            </div>
-        `).join('');
+            `;
+        }).join('');
 
         // -------------------------------------------------------------
         // XỬ LÝ MODAL POPUP CHI TIẾT
