@@ -965,6 +965,52 @@
                     </div>
                 </div>
 
+                <!-- Invited Speaker 13 - Mr. Septian Suryo  -->
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 hover:shadow-md hover:-translate-y-1 transition duration-300 flex flex-col h-full">
+    
+                    <!-- Phần 1: Ảnh và Thông tin cá nhân cơ bản -->
+                    <div class="flex flex-col items-center text-center mb-2">
+                        <!-- Ảnh đại diện -->
+                        <div class="w-24 h-24 rounded-full overflow-hidden shadow-sm border-2 border-white flex-shrink-0 mb-2">
+                            <img src="assets/speakers/Mr_Suryo.png" alt="Mr. Septian Suryo" class="w-full h-full object-cover">
+                        </div>
+    
+                        <!-- Thông tin cá nhân -->
+                        <div class="flex flex-col items-center gap-1">
+                            <h4 class="font-bold text-gray-900 text-lg leading-tight">Mr. Septian Suryo</h4>
+                            <p class="text-sm font-medium text-brand-blue">Founder and CEO, PUFFER Pure Water</p>
+                            <p class="text-sm font-medium text-brand-blue">PT Sefactor Deos Maks, Indonesia</p>
+
+                            <!-- Container cho Email đã được căn giữa -->
+                            <div class="flex items-center justify-center gap-2 text-xs text-gray-500 mt-1"> 
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:septian.suryo.apt@gmail.com" class="hover:text-brand-teal break-words">Email</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Đường kẻ phân cách -->
+                    <hr class="border-slate-200 my-2">
+
+                    <!-- Phần 2: Nội dung bài thuyết trình -->
+                    <div class="text-left flex-1 mt-2">
+                        <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Presentation Topic</p>
+                        <!-- Tiêu đề bài thuyết trình -->
+                        <h5 class="font-bold text-gray-800 mb-2 leading-snug">
+                            Training Models, Innovation and ASEAN–EU Cooperation
+                        </h5>
+                        <!-- Tóm tắt nội dung -->
+                        <p class="text-sm text-gray-600 line-clamp-3">
+                            Green skills become meaningful when students connect environmental principles with tasks they can observe, practise, and explain....
+                        </p>
+        
+                        <!-- Nút xem chi tiết (Tùy chọn) -->
+                        <button onclick="openModal('abstract-modal-septiansuryo')" class="inline-block mt-3 text-sm text-brand-teal font-medium hover:underline text-left cursor-pointer appearance-none bg-transparent border-none p-0">
+                            Read full abstract &rarr;
+                        </button>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -1776,6 +1822,65 @@
 
             <p class="mb-3">
                 <strong>Keywords:</strong> Green Jobs; Low-Carbon; Sustainable Construction Materials; construction industry
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Popup Modal cho bài thuyết trình của Mr. Septian Suryo -->
+<div id="abstract-modal-septiansuryo" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm transition-opacity duration-300">
+    <!-- Khung nội dung Modal -->
+    <div class="bg-white rounded-2xl p-6 md:p-8 max-w-2xl w-full mx-4 shadow-2xl relative transform scale-100 transition-transform">
+        
+        <!-- Nút Tắt (Dấu X) -->
+        <button onclick="closeModal('abstract-modal-septiansuryo')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-800 focus:outline-none transition-colors">
+            <i class="fas fa-times text-2xl"></i>
+        </button>
+
+        <!-- Tiêu đề -->
+        <p class="text-xs font-semibold text-brand-teal uppercase tracking-wider mb-2">Full Abstract</p>
+        <h3 class="font-bold text-gray-900 text-xl md:text-2xl mb-4 leading-snug border-b border-gray-100 pb-4">
+            Training Models, Innovation and ASEAN–EU Cooperation
+        </h3>
+        
+        <!-- Nội dung chi tiết (Có thể cuộn nếu quá dài) -->
+        <div class="text-gray-700 text-sm md:text-base leading-relaxed max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar">
+            <p class="mb-3">    
+                Green skills become meaningful when students connect environmental principles with tasks they can
+                observe, practise, and explain. Drawing on the presenter’s experience at PUFFER Pure Water in
+                hosting university interns, including students from Universitas Hasanuddin, this presentation
+                examines how water treatment workplaces can support practical learning across environmental,
+                chemical, and industrial engineering.
+            </p>
+
+            <p class="mb-3">
+                The presentation proposes a simple training model built around observation, supervised practice, and
+                explanation. Adaptable learning activities include understanding treatment processes, identifying
+                sampling points, reviewing operating records, and examining workflow. These activities connect
+                technical knowledge with responsible water use, energy awareness, materials handling, and clear
+                communication. Site orientation, agreed task boundaries, mentor feedback, and a field notebook
+                provide a practical structure for learning. A short progress checklist helps mentors review safe
+                conduct, record quality, reasoning, and communication, while students demonstrate what they have
+                learned through an agreed task and a concise report.
+            </p>
+
+            <p class="mb-3">
+                Innovation is presented through manageable improvements using tools already available, such as
+                clearer recording forms, spreadsheets, and approved visual guides. The emphasis is on addressing a
+                specific workplace need and reviewing evidence before introducing a change.
+            </p>
+
+            <p class="mb-3">
+                For ASEAN–EU cooperation, the presentation proposes collaboration around one shared water
+                treatment learning case, supported by mentor exchange and joint student discussions. Partners can
+                adapt the task to local conditions while comparing teaching approaches and learning evidence. The
+                presentation concludes with a proposal for a small pilot involving a host company and a university,
+                offering a practical starting point for strengthening internships and preparing students to contribute
+                to environmentally responsible workplaces.
+            </p>
+
+            <p class="mb-3">
+                <strong>Keywords:</strong> Green skills; university internships; water treatment; workplace learning; ASEAN–EU cooperation.
             </p>
         </div>
     </div>
